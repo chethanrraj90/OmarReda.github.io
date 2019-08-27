@@ -35,12 +35,16 @@
 			Preloader
 		-->
 		<div class="preloader" style="background-image: url(images/profile0.gif); background-position: center;">
-				<div class="title" style="margin-top:21%;"><h1><strong>WELCOME GUEST</strong></h1>
-					<div style="font-size: 18px; ">Please Wait  ...  Loading Files</div>
-				</div>
-					<div class="spinner">
-					</div>
+			<div class="loader-wrapper">
+				<span class="loader"><span class="loader-inner"></span></span>
+			</div>
+					<div class="spinner"></div>
 		</div>
+		<script>
+			$(window).on("load",function(){
+			  $(".loader-wrapper").fadeOut("slow");
+			});
+		</script>
 		
 		<!--
 			Header
