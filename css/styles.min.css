@@ -315,39 +315,80 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #191a19;
+  background-color: #262626;
   display:flex;
   justify-content: center;
   align-items: center;
 }
 .loader {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  border: 4px solid #5ac24e;
-  animation: loader 2s infinite ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background: transparent;
+    border: 3px solid #3c3c3c;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 150px;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #5ac24e;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px #5ac24e;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
-.loader-inner {
-  vertical-align: top;
-  display: inline-block;
-  width: 100%;
-  background-color: #5ac24e;
-  animation: loader-inner 2s infinite ease-in;
+.loader::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-top: 3px solid #5ac24e;
+    border-right: 3px solid #5ac24e;
+    border-radius: 50%;
+    animation: animateCircle 2s linear infinite;
 }
-@keyframes loader {
-  0% { transform: rotate(0deg);}
-  25% { transform: rotate(180deg);}
-  50% { transform: rotate(180deg);}
-  75% { transform: rotate(360deg);}
-  100% { transform: rotate(360deg);}
+.loader span {
+    display: block;
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 50%;
+    width: 50%;
+    height: 4px;
+    background:transparent;
+    transform-origin: left;
+    animation: animate 2s linear infinite;
 }
-@keyframes loader-inner {
-  0% { height: 0%;}
-  25% { height: 0%;}
-  50% { height: 100%;}
-  75% { height: 100%;}
-  100% { height: 0%;}
+.loader span::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    background: #5ac24e;
+    box-shadow: 0 0 10px #5ac24e;
+}
+@keyframes animateCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes animate {
+    0% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(405deg);
+    }
 }
 .preloader .spinner .double-bounce1,
 .preloader .spinner .double-bounce2 {
