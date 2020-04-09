@@ -1,7 +1,7 @@
-# My_Website
+# Personal Website
 
-Website carry my work and all my info, representing my skills in programming.
+This website include detailed information and links about my experience, education, work and contacts.
 
 ## Built with
 
-* HTML - CSS - JavaScript - Jquery - ParticlesJS
+* HTML - CSS - JavaScript - Jquery - Particles.Js
