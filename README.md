@@ -4,4 +4,4 @@ This website include detailed information and links about my experience, educati
 
 ## Built with
 
-* HTML - CSS - JavaScript - Jquery - Particles.Js
+* HTML - CSS - JavaScript - Jquery
